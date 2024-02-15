@@ -1,12 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import img from './images/register.jpg';
-import logo from './images/logo.png';
 import Main from './signin/page';
 import Link from 'next/link';
-import configAPI from '../.config';
+import configAPI from './.config';
 
 
 

@@ -17,6 +17,7 @@ const DateInput: React.FC<DateInputProps> = ({ onDateChange }) => {
   };
 
   return (
+    
     <div className="flex items-center space-x-2 ml-3">
       <label htmlFor="datePicker" className="text-white bold select-none">
         Дата на събитието

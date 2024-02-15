@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/navbar';
 import DateInput from '../Components/dateInput';
-import configAPI from '../../.config';
+import configAPI from './../.config';
 import FilePhoto from '../images/Upload.png';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';

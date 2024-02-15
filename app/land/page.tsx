@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import NavBar from '../Components/navbar';
 import SideBar from '../Components/sidebar';
-import configAPI from '../../.config';
+import configAPI from './../.config';
 import videoFile from '../videos/BackGLand.mp4';
 import PlayerFn from '../land/Video';
-import ReactPlayer from 'react-player';
+
 
 interface DateInputProps {
   onDateChange: (date: Date) => void;
