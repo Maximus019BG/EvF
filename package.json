@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:css": "postcss src/styles/index.css -o src/styles/tailwind.css"
+    
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
