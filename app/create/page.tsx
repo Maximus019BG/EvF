@@ -25,6 +25,12 @@ const Create: React.FC = () => {
   
   console.log(storedName)
   
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('name', storedName);
+    }
+  }, [storedName]);
+
   const handlePostCreation = async () => {
     try {
       if (!date) {
@@ -42,7 +48,6 @@ const Create: React.FC = () => {
       }
 
       await axios.post(`${apiUrl}/posts`, formData);
-      localStorage.setItem('name', storedName); // directly set the value in localStorage
     } catch (error) {
       console.error(error);
       setError('Error creating post. Please try again later.');
