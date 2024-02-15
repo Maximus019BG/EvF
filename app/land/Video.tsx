@@ -20,7 +20,7 @@ const PlayerFn: React.FC<PlayerFnProps> = (props) => {
                 video.play(); // Start playing the video
             }
         }
-    }, []); 
+    }, [props.autoplay, props.volume]);
 
     return (
         <video

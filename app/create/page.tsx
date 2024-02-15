@@ -18,8 +18,8 @@ const Create: React.FC = () => {
   const [date, setdate] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
   const apiUrl = configAPI.apiUrl;
-  const storedName = localStorage.getItem('name') || '';
   const router = useRouter();
+  const [storedName, setStoredName] = useState<string>('');
 
   
   
