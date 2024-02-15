@@ -4,9 +4,9 @@ import daisyui from 'daisyui'
 const config: Config = {
 
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx,html}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx,html}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx,html}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx,html}',
+    './components/**/*.{js,ts,jsx,tsx,mdx,html}',
+    './app/**/*.{js,ts,jsx,tsx,mdx,html}',
   ],
   darkMode: 'class', // This enables dark mode
   theme: {
