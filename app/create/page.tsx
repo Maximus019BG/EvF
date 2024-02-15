@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from 'react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/navbar';
@@ -20,6 +21,13 @@ const Create: React.FC = () => {
   const storedName = localStorage.getItem('name') || '';
   const router = useRouter();
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // It's safe to use localStorage here
+      localStorage.setItem('key', 'value');
+    }
+  }, []);
+  
   console.log(storedName)
   const handlePostCreation = async () => {
     try {

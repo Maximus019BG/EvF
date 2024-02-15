@@ -24,8 +24,14 @@ const Main: React.FC = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const router = useRouter(); 
-   const apiUrl = configAPI.apiUrl ;
+  const apiUrl = configAPI.apiUrl ;
 
+   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // It's safe to use localStorage here
+      localStorage.setItem('key', 'value');
+    }
+  }, []);
   
 
 
