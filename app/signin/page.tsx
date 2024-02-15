@@ -106,12 +106,7 @@ const Signin: React.FC = () => {
    
          {/* small divice background */}
         <div className='w-screen  h-2/3 xl:hidden md:w-0 sm:w-screen sm: overflow-clip mx-0 -mb-20 '> 
-        <video src={require('../videos/Signin.mp4')} 
-          autoPlay 
-          muted 
-          loop
-          className="w-full h-full object-cover border-none"
-        />
+       
         </div>
       </div>
     </div>

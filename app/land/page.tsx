@@ -101,7 +101,7 @@ const Main: React.FC = () => {
     <div className='h-screen dark:bg-black  '>
        <section className='-mt-0'>
       
-        <video src={require('../videos/BackGLand.mp4')} autoPlay muted loop className='-mt-10 fix ' />
+    
        </section>
       <div className='flex absolute top-96 overflow-hidden'>
         <section className='mt-96'>
