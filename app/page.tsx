@@ -19,12 +19,7 @@ const Home: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const errorI =  console.error("Invalid input. Please fill in all the required fields.");
  
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // It's safe to use localStorage here
-      localStorage.setItem('key', 'value');
-    }
-  }, []);
+  
  // useEffect to Google API library
  useEffect(() => {
   const script = document.createElement('script');

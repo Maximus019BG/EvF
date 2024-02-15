@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../Components/navbar';
@@ -21,21 +21,17 @@ const Create: React.FC = () => {
   const storedName = localStorage.getItem('name') || '';
   const router = useRouter();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // It's safe to use localStorage here
-      localStorage.setItem('key', 'value');
-    }
-  }, []);
+  
   
   console.log(storedName)
+  
   const handlePostCreation = async () => {
     try {
       if (!date) {
         setError('Please select a date.');
         return;
       }
-  
+
       const formData = new FormData();
       formData.append('title', title);
       formData.append('description', description);
@@ -46,9 +42,7 @@ const Create: React.FC = () => {
       }
 
       await axios.post(`${apiUrl}/posts`, formData);
-
-      localStorage.setItem('name', storedName);
-      
+      localStorage.setItem('name', storedName); // directly set the value in localStorage
     } catch (error) {
       console.error(error);
       setError('Error creating post. Please try again later.');

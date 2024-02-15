@@ -10,12 +10,7 @@ const Signin: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const apiUrl = configAPI.apiUrl ;
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // It's safe to use localStorage here
-      localStorage.setItem('key', 'value');
-    }
-  }, []);
+ 
   
   const handleSignIn = (event: React.FormEvent) => {
     event.preventDefault();

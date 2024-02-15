@@ -26,12 +26,7 @@ const Main: React.FC = () => {
   const router = useRouter(); 
   const apiUrl = configAPI.apiUrl ;
 
-   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // It's safe to use localStorage here
-      localStorage.setItem('key', 'value');
-    }
-  }, []);
+   
   
 
 
