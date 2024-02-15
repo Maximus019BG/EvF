@@ -1,7 +1,8 @@
+import withVideos from 'next-videos'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Your Next.js configuration options go here
-  }
-  
-  export default nextConfig
- 
+    // Your existing configuration options...
+}
+
+export default withVideos(nextConfig)
