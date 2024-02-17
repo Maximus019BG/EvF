@@ -70,10 +70,10 @@ const Create: React.FC = () => {
     <>
       <NavBar />
       <div className='flex w-5/6 h-5/6 shadow-sm shadow-slate-300 rounded-xl mx-36 p-24 justify-between'>
-        <div className=' w-full'>
-          <h1 className='my-10 font-bold '>Създай пост</h1>
-            <form onSubmit={handlePostCreation}>
-              <div>
+        <form onSubmit={handlePostCreation}>
+          <div className=' w-full'>
+            <h1 className='my-10 font-bold '>Създай пост</h1>
+            <div>
               <input
                 type='text'
                 id='title'
@@ -84,9 +84,9 @@ const Create: React.FC = () => {
                 required
                 placeholder='Заглавие'
               />
-              </div>
+            </div>
 
-              <div className='my-12'>
+            <div className='my-12'>
               <input
                 type='text'
                 id='description'
@@ -97,40 +97,38 @@ const Create: React.FC = () => {
                 required
                 placeholder='Описание'
               />
-              </div>
-
-              
-
-              <DateInput onDateChange={handleDateChange } />
-
-                <div className='flex items-center justify-between mt-4 mb-3'>
-                  <input
-                    type='submit'
-                    value='Създай пост'
-                    className='bg-green-500 text-white font-semibold p-4 rounded-lg -ml-[2px] cursor-pointer text-bold hover:bg-green-600 text-md'
-                  />
-                </div>
-              </form>
             </div>
-            <div className='flex-shrink-0 ml-4'>
-              <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2 ml-16 '>
-                <div className='flex flex-col items-center justify-center pt-5 pb-6'>
-                  <Image
-                    src={FilePhoto}
-                    alt="Signin2"
-                    className="w-24 my-2 "
-                  />
-                  <p className='mb-2 text-sm text-white'><span className='font-semibold'>Click to upload</span> or drag and drop</p>
-                </div>
-                <input
-                  type='file'
-                  id='photo'
-                  name='photo'
-                  className='hidden'
-                  onChange={handleFileChange}
+
+            <DateInput onDateChange={handleDateChange} />
+
+            <div className='flex items-center justify-between mt-4 mb-3'>
+              <input
+                type='submit'
+                value='Създай пост'
+                className='bg-green-500 text-white font-semibold p-4 rounded-lg -ml-[2px] cursor-pointer text-bold hover:bg-green-600 text-md'
+              />
+            </div>
+          </div>
+          <div className='flex-shrink-0 ml-4'>
+            <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2 ml-16 '>
+              <div className='flex flex-col items-center justify-center pt-5 pb-6'>
+                <Image
+                  src={FilePhoto}
+                  alt="Signin2"
+                  className="w-24 my-2 "
                 />
-              </label>
-            </div>
+                <p className='mb-2 text-sm text-white'><span className='font-semibold'>Click to upload</span> or drag and drop</p>
+              </div>
+              <input
+                type='file'
+                id='photo'
+                name='photo'
+                className='hidden'
+                onChange={handleFileChange}
+              />
+            </label>
+          </div>
+        </form>
       </div>
     </>
   );
