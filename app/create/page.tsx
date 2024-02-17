@@ -37,15 +37,17 @@ const Create: React.FC = () => {
         setError('Please select a date.');
         return;
       }
-
+      if (!photos) {
+        setError('Please upload a photo.');
+        return;
+      }
       const formData = new FormData();
       formData.append('title', title);
       formData.append('description', description);
       formData.append('date', date.toISOString().split('T')[0]);
       formData.append('createdBy', storedName);
-      if (photos) {
-        formData.append('photos', photos);
-      }
+      formData.append('photos', photos);
+      
 
       await axios.post(`${apiUrl}/posts`, formData);
     } catch (error) {
