@@ -47,9 +47,12 @@ const Create: React.FC = () => {
       formData.append('date', date.toISOString().split('T')[0]);
       formData.append('createdBy', storedName);
       formData.append('photos', photos);
-      
 
-      await axios.post(`${apiUrl}/posts`, formData);
+      const response = await axios.post(`${apiUrl}/posts`, formData);
+
+      console.log(response.data);
+
+      router.push('/home');
     } catch (error) {
       console.error(error);
       setError('Error creating post. Please try again later.');
