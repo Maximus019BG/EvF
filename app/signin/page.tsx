@@ -6,7 +6,7 @@ import configAPI from './../.config';
 
 
 const Signin: React.FC = () => {
-  const [username, setUsername] = useState<string>('');
+  const [name, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const apiUrl = configAPI.apiUrl ;
 
@@ -21,7 +21,7 @@ const Signin: React.FC = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      name: username,
+      name: name,
       password: password,
   })
   .then((response) => {
@@ -72,10 +72,10 @@ const Signin: React.FC = () => {
             
             <input
               type="text"
-              id="username"
+              id="name"
               name="name"
               className="mt-1 p-2 w-full border-b-2 border-b-green-500 rounded-sm text-sm focus:outline-none"
-              value={username}
+              value={name}
               onChange={(e) => setUsername(e.target.value)}
               required
               placeholder='Потребителски Име'
