@@ -73,10 +73,7 @@ const Main: React.FC = () => {
 
           // Log the created_at and date_for_event fields for each document
           const documents = response.data.documents;
-          documents.forEach((document: any) => {
-            console.log(document.created_at);
-            console.log(document.date_for_event);
-          });
+          
         }
       })
       .catch(error => {
