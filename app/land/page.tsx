@@ -7,9 +7,8 @@ import NavBar from '../Components/navbar';
 import SideBar from '../Components/sidebar';
 import configAPI from './../.config';
 import videoFile from '../videos/BackGLand.mp4';
-import PlayerFn from '../land/Video';
-import ReactPlayer from 'react-player';
-import image1 from '../images/register.jpg';
+
+;
 
 
 
