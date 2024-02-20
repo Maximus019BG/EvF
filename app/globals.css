@@ -21,6 +21,11 @@
     display: none;
 
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
  background-color: white;
  
@@ -52,3 +57,4 @@ body {
 
   background-color: #011E2B;  
 }
+
