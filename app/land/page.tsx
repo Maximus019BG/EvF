@@ -9,10 +9,8 @@ import configAPI from './../.config';
 import videoFile from '../videos/BackGLand.mp4';
 import PlayerFn from '../land/Video';
 import ReactPlayer from 'react-player';
-import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-import { useInView } from 'react-intersection-observer';
-
 import image1 from '../images/register.jpg';
+
 
 
 
@@ -42,40 +40,9 @@ const Main: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const [ref, inView] = useInView({
-    triggerOnce: true, 
-  });
-  const [ref1, inView1] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref2, inView2] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref3, inView3] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref4, inView4] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref5, inView5] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref6, inView6] = useInView({
-    triggerOnce: true, 
-  })
-  const [ref7, inView7] = useInView({
-    triggerOnce: true, 
-  })
+ 
 
-   
-  const animationClass = inView ? 'animate-fade-in-up' : '';
-  const animationClass1 = inView1 ? 'animate-fade-in-up' : '';
-  const animationClass2 = inView2 ? 'animate-fade-in-up' : '';
-  const animationClass3 = inView3 ? 'animate-fade-in-up' : '';
-  const animationClass4 = inView4 ? 'animate-fade-in-up' : '';
-  const animationClass5 = inView5 ? 'animate-fade-in-up' : '';
-  const animationClass6 = inView6 ? 'animate-fade-in-up' : '';
-  const animationClass7 = inView7 ? 'animate-fade-in-up' : '';
+ 
 
   const toRegister = () => {
     router?.push('/');
@@ -164,7 +131,7 @@ const Main: React.FC = () => {
     <div className='flex absolute top-0 left-0 h-screen w-screen items-center justify-center '>
   <section className='-ml-96 z-20 '>
     <div className='flex -ml-96 items-center mt-80 justify-left h-screen'>
-      <div className='text-left'>
+    <div className='text-left'>
         <h1 className='mt-16 font-extrabold text-7xl text-white  uppercase animate-fade-in-up'>
           Добре дошли в&nbsp;
           <span className=''>
@@ -190,33 +157,33 @@ const Main: React.FC = () => {
         </div>
       </div>
       <section className='absolute top-full left-0 w-screen h-screen bg-white flex justify-start '>
-        <div className='p-10 max-w-2xl text-left animate-fade-in-up'>
-          <h1 ref={ref} className={`text-3xl font-bold mb-4`} style={{ visibility: inView ? 'visible' : 'hidden' }}>Търсите ли лесен начин да откривате и споделяте интересни събития?</h1>
-          <h2 ref={ref} className={`text-xl font-semibold mb-6`} style={{ visibility: inView ? 'visible' : 'hidden' }}>Eventium е вашият прозорец към света на събитията!</h2>
-          <p ref={ref1} className={`text-lg mb-6`} style={{ visibility: inView1 ? 'visible' : 'hidden' }}>Eventium е иновативно уеб приложение, създадено с цел да улесни общественото споделяне на събития. С Eventium можете:</p>
+        <div className='p-10 max-w-2xl text-left'>
+          <h1 className={`text-3xl font-bold mb-4`}>Търсите ли лесен начин да откривате и споделяте интересни събития?</h1>
+          <h2 className={`text-xl font-semibold mb-6`}>Eventium е вашият прозорец към света на събитията!</h2>
+          <p className={`text-lg mb-6`}>Eventium е иновативно уеб приложение, създадено с цел да улесни общественото споделяне на събития. С Eventium можете:</p>
           
-          <div ref={ref2} className={`list-disc list-inside text-left mb-6`} style={{ visibility: inView2 ? 'visible' : 'hidden' }}>
+          <div className={`list-disc list-inside text-left mb-6`}>
             <div className="relative bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10" style={{ backgroundImage: `url('https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` }}>
               <div className="absolute inset-0 bg-black opacity-60" style={{ pointerEvents: 'none' }}></div>
-              <div ref={ref3} className={`text-white ${animationClass3}`} style={{ position: 'relative', zIndex: 1, visibility: inView3 ? 'visible' : 'hidden' }}>
+              <div className={`text-white`} style={{ position: 'relative', zIndex: 1 }}>
                 Лесно да публикувате свои собствени събития и да ги предоставите за преглед на широката публика.
               </div>
             </div>
-            <div ref={ref4} className={`bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10 bg-white ${animationClass4}`} style={{visibility: inView4 ? 'visible' : 'hidden' }}>
+            <div className={`bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10 bg-white`}>
               Да преглеждате и избирате от богато разнообразие от събития, организирани от вашата общност.
             </div>
             <div className="relative bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10" style={{ backgroundImage: `url('https://images.pexels.com/photos/433452/pexels-photo-433452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` }}>
               <div className="absolute inset-0 bg-black opacity-60" style={{ pointerEvents: 'none' }}></div>
-              <div ref={ref5} className={`text-white ${animationClass5}`} style={{ position: 'relative', zIndex: 1, visibility: inView5 ? 'visible' : 'hidden' }}>
+              <div className={`text-white`} style={{ position: 'relative', zIndex: 1 }}>
                 Да определяте своите предпочитания и да получавате персонализирани предложения за събития, които биха ви харесали.
               </div>
             </div>
-            <div ref={ref6} className={`bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10 bg-white ${animationClass6}`} style={{ visibility: inView6 ? 'visible' : 'hidden' }}>
+            <div className={`bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10 bg-white`}>
               Да взаимодействате с други потребители и да споделяте информация за събития.
             </div>
             <div className="relative bg-cover bg-no-repeat bg-fixed w-screen p-64 -ml-10" style={{ backgroundImage: `url('https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')` }}>
               <div className="absolute inset-0 bg-black opacity-60" style={{ pointerEvents: 'none' }}></div>
-              <div ref={ref7} className={`text-white ${animationClass7}`} style={{ position: 'relative', zIndex: 1, visibility: inView7 ? 'visible' : 'hidden' }}>
+              <div className={`text-white`} style={{ position: 'relative', zIndex: 1 }}>
                 Да допринасяте за разнообразието и активността в общността си.
               </div>
             </div>
