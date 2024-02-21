@@ -21,7 +21,21 @@
     display: none;
 
 }
+  ::placeholder{
 
+    font-size: 1em;
+  }
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 html {
   scroll-behavior: smooth;
 }

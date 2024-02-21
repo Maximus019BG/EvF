@@ -130,13 +130,13 @@ const Main: React.FC = () => {
                   />
                 </figure>
                 <div className="card-body dark:bg-[#081216] border-none rounded-b-md ">
-                    <p className='text-sm font-extralight '> От {document.user_name}</p>
+                   
                     <h1 className='card-title font-bold'>{document.title}</h1>
                     <p className='mt-2 w-3/4 font-semibold '>{document.description}</p>
-                  <div className='flex '>
-                    <p> {document.user_name}</p>
-                    <p className='text-xs font-extralight'>Публикувано на {document.created_at}</p>
-                    <p className='text-xs font-extralight'>Ще се проведе на {document.date_for_event}</p>
+                  <div className='absolute flex top-60 left-56 '>
+
+                    <div className='badge badge-outline mx-1 '>От {document.user_name}</div>
+                    <div className='badge badge-outline mx-1'>{document.date_for_event}</div>
                   </div>
                 </div>
               </div>
