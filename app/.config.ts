@@ -3,7 +3,7 @@ interface Config {
 }
 
 const config: Config = {
-  apiUrl: 'https://obscure-tor-03894-e493d0da8dbc.herokuapp.com',
+  apiUrl: 'https://8xwjh672-5000.euw.devtunnels.ms',
 };
 
 export default config;  

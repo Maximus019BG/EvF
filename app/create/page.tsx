@@ -31,8 +31,12 @@ const Create: React.FC = () => {
     }
   }, [storedName]);
 
-  const handlePostCreation = async () => {
+  const handlePostCreation = async (event: React.FormEvent) => {
+    console.log('handlePostCreation is called');
+    event.preventDefault();
     try {
+      console.log({ date, photos, title, description, storedName });
+      console.log({ apiUrl });
       if (!date) {
         setError('Please select a date.');
         return;
@@ -45,10 +49,10 @@ const Create: React.FC = () => {
       formData.append('title', title);
       formData.append('description', description);
       formData.append('date', date.toISOString().split('T')[0]);
-      formData.append('createdBy', storedName);
+      formData.append('user_name', storedName);
       formData.append('photos', photos);
 
-      const response = await axios.post(`${apiUrl}/posts`, formData);
+      const response = await axios.post(`${apiUrl}/posts`, formData, { withCredentials: true });
 
       console.log(response.data);
 
@@ -75,7 +79,7 @@ const Create: React.FC = () => {
     <>
       <NavBar />
       <div className='flex w-5/6 h-5/6 shadow-sm shadow-slate-300 rounded-xl mx-36 p-24 justify-between'>
-        <form onSubmit={handlePostCreation}>
+       <form onSubmit={(event) => handlePostCreation(event)}>
           <div className=' w-full'>
             <h1 className='my-10 font-bold '>Създай пост</h1>
             <div>
