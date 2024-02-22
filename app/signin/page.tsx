@@ -32,7 +32,7 @@ const Signin: React.FC = () => {
       // Assuming the response contains a "message" indicating success
       if (response.data.message === "Login successful") {
           // Redirect 
-          window.location.href = '/land';
+          window.location.href = '/home';
       }
   })
   .catch((error) => {
@@ -110,7 +110,7 @@ const Signin: React.FC = () => {
           <p className='absolute bottom-1 -ml-56'>Нямаш акаунт? &nbsp;
             <Link href="../" passHref className=' underline text-green-500 font-medium'>Създай си</Link>
           </p>
-          
+
         </div>
          {/* small divice background */}
         <div className='w-screen  h-2/3 xl:hidden md:w-0 sm:w-screen sm: overflow-clip mx-0 -mb-20 '> 
