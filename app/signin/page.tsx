@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import configAPI from './../.config';
+import Link from 'next/link';
 
 
 const Signin: React.FC = () => {
@@ -105,7 +106,12 @@ const Signin: React.FC = () => {
         </form>
 
         
-   
+        <div>
+          <p className='absolute bottom-1 -ml-56'>Нямаш акаунт? &nbsp;
+            <Link href="../" passHref className=' underline text-green-500 font-medium'>Създай си</Link>
+          </p>
+          
+        </div>
          {/* small divice background */}
         <div className='w-screen  h-2/3 xl:hidden md:w-0 sm:w-screen sm: overflow-clip mx-0 -mb-20 '> 
        
