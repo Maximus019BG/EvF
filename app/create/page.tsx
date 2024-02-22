@@ -80,71 +80,70 @@ const Create: React.FC = () => {
   return (
     <>
       <NavBar />
-      <div className='absolute right-12 flex mx-36 justify-end top-10 dark:bg-[#011E2B] bg-white overflow-hidden'>
+      <div className='absolute right-0 xl:right-20 lg:right-20 md:right-10 -mr-2 xl:-mr-0 lg:-mr-0 md:-mr-0 flex mx-36 sm:mx-5 justify-end top-10 dark:bg-[#011E2B] bg-white overflow-hidden'>
       
-      <Image src={Image1} alt="dark illustration" className=' -mt-10 mr-20 hidden dark:block' width={950} height={950} />
-      <Image src={Image2} alt="light illustration" className=' -mt-10 mr-20 block dark:hidden' width={950} height={950} />
+      <Image src={Image1} alt="dark illustration" className=' -mt-10 mr-20 hidden xl:hidden md:hidden xl:dark:block md:dark:block dark:hidden md:h-70' width={950} height={950} />
+      <Image src={Image2} alt="light illustration" className=' -mt-10 mr-20  hidden xl:block md:block xl:dark:hidden md:dark:hidden dark:hidden md:h-70' width={950} height={950} />
       
 
-       <form onSubmit={(event) => handlePostCreation(event)} className='shadow-sm shadow-slate-300 mt-10 p-5 rounded-xl'>
-          <div className=' w-full'>
-            <h1 className='mb-10 mt-5 font-bold '>Създай пост</h1>
-            <div>
-              <input
-                type='text'
-                id='title'
-                name='title'
-                className='mt-1 p-2 w-full border-b-2 border-b-green-500 rounded-sm text-sm focus:outline-none input-placeholder'
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-                placeholder='Заглавие'
-              />
-            </div>
-
-            <div className='mt-4'>
-              <textarea
-                id='description'
-                name='description'
-                className=' w-full border-0 border-green-500 border-b-2 rounded-sm text-sm p-2 focus:outline-none textarea-placeholder'
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                required
-                placeholder='Описание'
-              />
-            </div>
-
-            <DateInput onDateChange={handleDateChange} />
-
-           
+      <form onSubmit={(event) => handlePostCreation(event)} className='shadow-sm shadow-slate-300 mt-10 p-5 rounded-xl xl:w-1/3 lg:w-1/3 md:w-1/2  w-screen '>
+        <div className='w-full'>
+          <h1 className='mb-10 mt-5 font-bold '>Създай пост</h1>
+          <div>
+            <input
+              type='text'
+              id='title'
+              name='title'
+              className='mt-1 p-2 w-full border-b-2 border-b-green-500 rounded-sm text-sm focus:outline-none input-placeholder'
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              placeholder='Заглавие'
+            />
           </div>
-          <div className='flex-shrink-0'>
-            <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2  '>
-              <div className='flex flex-col items-center justify-center pt-5 pb-6'>
-                <Image
-                  src={FilePhoto}
-                  alt="Signin2"
-                  className="w-24 my-2 "
-                />
-                <p className='mb-2 text-sm text-white px-10'><span className='font-semibold'>Качи снимка: </span> постави снимка за събитието </p>
-              </div>
-              <input
-                type='file'
-                id='photo'
-                name='photo'
-                className='hidden'
-                onChange={handleFileChange}
-              />
-            </label>
+
+          <div className='mt-4'>
+            <textarea
+              id='description'
+              name='description'
+              className=' w-full border-0 border-green-500 border-b-2 rounded-sm text-sm p-2 focus:outline-none textarea-placeholder'
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              placeholder='Описание'
+            />
           </div>
-          <div className='flex items-center justify-between mt-4 mb-3'>
-              <input
-                type='submit'
-                value='Създай пост'
-                className='bg-green-400 text-white font-semibold p-4 rounded-lg -ml-[2px] cursor-pointer text-bold hover:bg-green-600 text-md'
+
+          <DateInput onDateChange={handleDateChange} />
+
+        </div>
+        <div className='flex-shrink-0'>
+          <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2  '>
+            <div className='flex flex-col items-center justify-center pt-5 pb-6'>
+              <Image
+                src={FilePhoto}
+                alt="Signin2"
+                className="w-24 my-2 "
               />
+              <p className='mb-2 text-sm text-white px-10'><span className='font-semibold'>Качи снимка: </span> постави снимка за събитието </p>
             </div>
-        </form>
+            <input
+              type='file'
+              id='photo'
+              name='photo'
+              className='hidden'
+              onChange={handleFileChange}
+            />
+          </label>
+        </div>
+        <div className='flex items-center justify-between mt-4 mb-3'>
+            <input
+              type='submit'
+              value='Създай пост'
+              className='bg-green-400 text-white font-semibold p-4 rounded-lg -ml-[2px] cursor-pointer text-bold hover:bg-green-600 text-md'
+            />
+          </div>
+      </form>
       </div>
       
     </>
