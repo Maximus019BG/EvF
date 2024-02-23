@@ -130,7 +130,7 @@ const Main: React.FC = () => {
        
 
         {documents && (
-          <div className='relative z-0 ml-8 w-full xl:ml-80 mt-36 mr-10 mb-2  grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-9'>
+          <div className='relative z-0 ml-8 w-full xl:ml-80 mt-36 mr-10 mb-2 grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-9 justify-items-center align-items-center'>
             {documents.map((document, index) => (
               <div key={index} className='relative w-96 card border border-none '>
                 <figure>
