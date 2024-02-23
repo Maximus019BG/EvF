@@ -42,8 +42,8 @@ const SideBar: React.FC = () => {
   return (
     <div className=' xl:-mt-11 lg:-mt-11 md:-mt-0 z-10'>
       <button className="toggle-button" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-      <span className={isSidebarOpen ? 'button-text button-text-show' : 'button-text button-text-hide'}>Hide</span>
-      <span className={!isSidebarOpen ? 'button-text button-text-show' : 'button-text button-text-hide'}>Show</span>
+      <span className={isSidebarOpen ? 'button-text button-text-show1' : 'button-text button-text-hide'}>Затвори</span>
+      <span className={!isSidebarOpen ? 'button-text button-text-show ' : 'button-text button-text-hide'}>Отвори</span>
       </button>
       <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'} flex flex-col items-start mt-[48px] fixed h-screen z-6 w-60 text-2xl shadow-slate-400 pt-4 bg-white dark:bg-gray-800`}>
         <h1 className={`mb-4 ml-5 text-4xl text-gray-900 dark:text-white`}>Филтри</h1>
