@@ -109,7 +109,7 @@ const Main: React.FC = () => {
 
   return (
     <div className={`h-screen dark:bg-[#011E2B] `}>
-      <div className='fixed z-20'>
+      <div className='fixed z-30'>
 
       <NavBar />
       
