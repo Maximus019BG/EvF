@@ -79,7 +79,7 @@ const Create: React.FC = () => {
 
   return (
     <>
-     <div className={`z-20`}>
+     <div className={`fixed z-20 `}>
       <NavBar />
       
      </div>
