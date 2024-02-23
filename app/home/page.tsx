@@ -108,41 +108,56 @@ const Main: React.FC = () => {
   };
 
   return (
-    <div className={`h-screen dark:bg-[#011E2B]  `}>
+    <div className={`h-screen dark:bg-[#011E2B] `}>
+      <div className='fixed z-20'>
+
       <NavBar />
-      <div className='flex overflow-hidden'>
+      
+      </div>
+      <div className=' flex overflow-hidden z-10'>
+
+        <div className='fixed z-20'>
         <SideBar />
+        </div>
+        <div>
+
+        </div>
+
 
         {loading && <p>Loading data...</p>}
         {error && <p>{error}</p>}
 
+       
+
         {documents && (
-          <div className='ml-80 mt-36 mr-10 mb-2 w-5/6 grid grid-cols-3 gap-9'>
+          <div className='relative z-0 ml-8 w-full xl:ml-80 mt-36 mr-10 mb-2  grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-9'>
             {documents.map((document, index) => (
-              <div key={index} className='card border border-none '>
+              <div key={index} className='relative w-96 card border border-none '>
                 <figure>
                   <Image
                     src={`data:image/png;base64,${document.image_data}`}
                     alt={`Image ${index}`}
                     width={300}
                     height={300}
-                    className='w-full h-48 object-cover border-none rounded-t-md'
+                    className='w-96 h-48 object-cover border-none rounded-t-md'
                   />
                 </figure>
-                <div className="card-body dark:bg-[#081216] border-none rounded-b-md ">
-                   
-                    <h1 className='card-title font-bold'>{document.title}</h1>
-                    <p className='mt-2 w-3/4 font-semibold '>{document.description}</p>
-                  <div className='absolute flex top-60 left-56 '>
-
+                <div className="card-body w-96 bg-slate-100 dark:bg-[#081216] border-none rounded-b-md ">
+                  <h1 className='card-title font-bold'>{document.title}</h1>
+                  <p className='mt-2 font-semibold w-80 break-words'>
+                    {document.description}
+                  </p>
+                  <div className='flex flex-wrap mt-2'>
                     <div className='badge badge-outline mx-1 '>От {document.user_name}</div>
-                    <div className='badge badge-outline mx-1'>{document.date_for_event}</div>
+                    <div className='badge badge-outline mx-1 '>{document.date_for_event}</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         )}
+
+     
       </div>
     </div>
   );

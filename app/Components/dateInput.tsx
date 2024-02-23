@@ -18,20 +18,20 @@ const DateInput: React.FC<DateInputProps> = ({ onDateChange }) => {
 
   return (
     
-    <div className="flex  items-center my-2 space-x-2 ">
-      <label htmlFor="datePicker" className=" text-white border-0 rounded-md p-2 bg-green-400 bold select-none ">
-        Дата на събитието
-      </label>
-      <div className="absolute">
+    <div className="flex relative items-center my-2 space-x-2 ">
+    
+      <div className='  -mr-10 -ml-2 '>
+       <div className="absolute z-50 w-screen ">
         <DatePicker
           id="datePicker"
           selected={selectedDate}
           onChange={handleDateChange}
           dateFormat="yyyy/MM/dd"
           autoComplete="off"
-          className="border-0 py-3 w-44 ml-36  bg-white dark:bg-[#011E2B] rounded-md relative right-[169px] -z-10 text-black text-opacity-0 select-none dark:text-white"
+          className="border py-3 ml-2 w-50 border-green-500 bg-white dark:bg-[#011E2B] rounded-md relative text-opacity-0 select-none dark:text-white"
         />
-      </div>
+       </div>
+     </div>
     </div>
   );
 };

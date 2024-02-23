@@ -40,7 +40,7 @@ const SideBar: React.FC = () => {
   const filters = ['Filter 1', 'Filter 2', 'Filter 3', 'Filter 4']; 
   
   return (
-    <div className=' xl:-mt-11 lg:-mt-11 -mt-0'>
+    <div className=' xl:-mt-11 lg:-mt-11 md:-mt-0 z-10'>
       <button className="toggle-button" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
       <span className={isSidebarOpen ? 'button-text button-text-show' : 'button-text button-text-hide'}>Hide</span>
       <span className={!isSidebarOpen ? 'button-text button-text-show' : 'button-text button-text-hide'}>Show</span>

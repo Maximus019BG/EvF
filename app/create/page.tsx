@@ -79,11 +79,14 @@ const Create: React.FC = () => {
 
   return (
     <>
+     <div className={`z-20`}>
       <NavBar />
-      <div className='absolute right-0 xl:right-20 lg:right-20 md:right-10 -mr-2 xl:-mr-0 lg:-mr-0 md:-mr-0 flex mx-36 sm:mx-5 justify-end top-10 dark:bg-[#011E2B] bg-white overflow-hidden'>
       
-      <Image src={Image1} alt="dark illustration" className=' -mt-10 mr-20 hidden xl:hidden md:hidden xl:dark:block md:dark:block dark:hidden md:h-70' width={950} height={950} />
-      <Image src={Image2} alt="light illustration" className=' -mt-10 mr-20  hidden xl:block md:block xl:dark:hidden md:dark:hidden dark:hidden md:h-70' width={950} height={950} />
+     </div>
+      <div className='absolute right-0 top-14 xl:right-20 z-0 lg:right-20 md:right-10 -mr-2 xl:-mr-0 lg:-mr-0 md:-mr-0 flex mx-36 sm:mx-5 justify-end  dark:bg-[#011E2B] bg-white overflow-hidden'>
+      
+      <Image src={Image1} alt="dark illustration" className=' -mt-10 mr-20 z-0 hidden xl:hidden md:hidden xl:dark:block md:dark:block dark:hidden md:h-70' width={950} height={950} />
+      <Image src={Image2} alt="light illustration" className=' -mt-10 mr-20 z-0  hidden xl:block md:block xl:dark:hidden md:dark:hidden dark:hidden md:h-70' width={950} height={950} />
       
 
       <form onSubmit={(event) => handlePostCreation(event)} className='shadow-sm shadow-slate-300 mt-10 p-5 rounded-xl xl:w-1/3 lg:w-1/3 md:w-1/2  w-screen '>
@@ -99,6 +102,7 @@ const Create: React.FC = () => {
               onChange={(e) => setTitle(e.target.value)}
               required
               placeholder='Заглавие'
+              maxLength={60}
             />
           </div>
 
@@ -112,12 +116,12 @@ const Create: React.FC = () => {
               required
               placeholder='Описание'
             />
-          </div>
-
+          </div >
+      
           <DateInput onDateChange={handleDateChange} />
-
+    
         </div>
-        <div className='flex-shrink-0'>
+        <div className='flex-shrink-0 mt-16'>
           <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2  '>
             <div className='flex flex-col items-center justify-center pt-5 pb-6'>
               <Image
