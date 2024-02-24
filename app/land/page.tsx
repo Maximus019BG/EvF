@@ -100,8 +100,8 @@ const Main: React.FC = () => {
       isMounted = false;
     };
    
-    // eslint-disable-next-line
-  }, [router]);
+   
+  }, [router, apiUrl]);
 
   const handleLogout = async () => {
     try {
@@ -121,13 +121,30 @@ const Main: React.FC = () => {
     <div className='h-screen dark:bg-black overflow-hidden '>
     <section className='-mt-0 '>
       <div className='h-screen absolute w-screen bg-black opacity-70  z-10'></div>
-      <video src={require('../videos/BackGLand.mp4')} autoPlay muted loop className='-mt-12 fixed z-0' />
+      <video 
+        src={require('../videos/BackGLand.mp4')} 
+        autoPlay 
+        muted 
+        loop 
+        className='-mt-12 fixed z-0'
+        style={{ 
+          position: 'fixed',
+          right: '0',
+          bottom: '0',
+          minWidth: '100%',
+          minHeight: '100%',
+          width: 'auto',
+          height: 'auto',
+          zIndex: '0',
+          objectFit: 'cover'
+        }}
+      />
     </section>
     <div className='flex absolute top-0 left-0 h-screen w-screen items-center justify-center '>
       <section className='lg:-ml-96 z-20 '>
         <div className='flex lg:-ml-96 items-center justify-left h-screen'>
           <div className='text-left lg:ml-20 -mb-96'>
-            <h1 className='mt-16  font-extrabold text-4xl text-white  uppercase animate-fade-in-up'>
+            <h1 className='mt-16  font-extrabold text-4xl text-white uppercase animate-fade-in-up'>
               Добре дошли в&nbsp;
               <span className=''>
                 Евентиум
