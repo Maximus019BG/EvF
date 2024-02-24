@@ -10,6 +10,7 @@ const config: Config = {
   darkMode: 'class', 
   theme: {
     extend: {
+      
       fontSize: {
         'sm': 'clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)',
         'md': 'clamp(1rem, 0.34vw + 0.91rem, 1.19rem)',

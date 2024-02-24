@@ -9,11 +9,6 @@ import videoFile from '../videos/BackGLand.mp4';
 
 
 
-
-
-
-
-
 interface DateInputProps {
   onDateChange: (date: Date) => void;
 }
@@ -140,27 +135,27 @@ const Main: React.FC = () => {
         }}
       />
     </section>
-    <div className='flex absolute top-0 left-0 h-screen w-screen items-center justify-center '>
-      <section className='lg:-ml-96 z-20 '>
-        <div className='flex lg:-ml-96 items-center justify-left h-screen'>
-          <div className='text-left lg:ml-20 -mb-96'>
-            <h1 className='mt-16  font-extrabold text-4xl text-white uppercase animate-fade-in-up'>
+    <div className='flex absolute -top-56 left-0 h-screen w-screen items-center justify-center '>
+      <section className=' absolute left-2 z-20 '>
+        <div className='flex -ml-20  items-center justify-left h-screen'>
+          <div className='text-left ml-20 -mb-96'>
+            <h1 className='mt-16 font-extrabold text-4xl text-white uppercase animate-fade-in-up'>
               Добре дошли в&nbsp;
               <span className=''>
                 Евентиум
               </span>
             </h1>
-            <h2 className='font-extrabold text-2xl mt-2  text-white uppercase animate-fade-in-up'>
+            <h2 className='font-extrabold text-2xl mt-2 absolute left-0 text-white uppercase animate-fade-in-up'>
               Уеб приложението за&nbsp;
               <span className=''>
                 събития
               </span>
             </h2>
             <div>
-              <button onClick={toRegister} className='mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md text-md animate-fade-in-up'>
+              <button onClick={toRegister} className='mt-28 absolute left-0   bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md text-md animate-fade-in-up'>
                 Създай акаунт
               </button>
-              <button onClick={toSignIn} className='mt-4 ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md text-md animate-fade-in-up'>
+              <button onClick={toSignIn} className='mt-28 ml-4 absolute left-44  bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md text-md animate-fade-in-up'>
                 Влез в акаунта си
               </button>
             </div>

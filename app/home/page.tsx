@@ -150,7 +150,7 @@ const Main: React.FC = () => {
                     alt={`Image ${index}`}
                     width={300}
                     height={300}
-                    className='w-96 h-48 object-cover border-none rounded-t-md'
+                    className='w-96 h-48 object-cover border-none rounded-t-md transition-transform hover:scale-125'
                   />
                 </figure>
                 <div className="card-body w-96 bg-slate-100 dark:bg-[#081216] border-none rounded-b-md ">
