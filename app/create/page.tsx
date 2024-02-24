@@ -79,19 +79,18 @@ const Create: React.FC = () => {
 
   return (
     <>
-     <div className={`fixed z-20 `}>
+     <div className={`fixed z-20 w-screen `}>
       <NavBar />
       
      </div>
-      <div className='absolute right-0 top-14 xl:right-20 z-0 lg:right-20 md:right-10 -mr-2 xl:-mr-0 lg:-mr-0 md:-mr-0 flex mx-36 sm:mx-5 justify-end  dark:bg-[#011E2B] bg-white overflow-hidden'>
+      <div className='absolute right-0 w-screen top-14 xl:right-20 z-0 lg:right-20 md:right-10 -mr-2 xl:-mr-0 lg:-mr-0 md:-mr-0 flex mx-36 sm:mx-5 justify-end  dark:bg-[#011E2B] bg-white overflow-hidden'>
       
-      <Image src={Image1} alt="dark illustration" className=' -mt-10 mr-20 z-0 hidden xl:hidden md:hidden  xl:dark:block md:dark:block lg:dark:scale-90 md:-ml-24 md:dark:scale-75 sm:dark:scale-50 dark:hidden md:h-70' width={950} height={950} />
-      <Image src={Image2} alt="light illustration" className=' -mt-10 mr-20 z-0  hidden xl:block lg:scale-90 md:block md:scale-75 md:-ml-24 sm:scale-50 xl:dark:hidden md:dark:hidden dark:hidden md:h-70' width={950} height={950} />
+        <Image src={Image1} alt="dark illustration" className=' -mt-10 left-60 -top-5 absolute mr-20 z-0 hidden xl:hidden md:hidden  xl:dark:block md:dark:block lg:dark:scale-90 md:-ml-24 md:dark:scale-75 sm:dark:scale-50 dark:hidden md:h-70' width={950} height={950} />
+        <Image src={Image2} alt="light illustration" className=' -mt-10 left-60 -top-5 absolute mr-20 z-0  hidden xl:block lg:scale-90 md:block md:scale-75 md:-ml-24 sm:scale-50 xl:dark:hidden md:dark:hidden dark:hidden md:h-70' width={950} height={950} />
       
-
       <form onSubmit={(event) => handlePostCreation(event)} className='shadow-sm shadow-slate-300 mt-10 p-5 rounded-xl xl:w-1/3 lg:w-2/3 md:w-2/3 lg:-ml-24 lg:-mr-5 md:-ml-36 md:-mr-5 w-screen '>
         <div className='w-full'>
-          <h1 className='mb-10 mt-5 font-bold '>Създай пост</h1>
+          <h1 className='mb-10 mt-5 text-lg font-bold '>Създай пост</h1>
           <div>
             <input
               type='text'
