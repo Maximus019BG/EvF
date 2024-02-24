@@ -1,26 +1,26 @@
-'use client';
-import { useEffect, useState } from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import NavBar from '../Components/navbar';
 import SideBar from '../Components/sidebar';
 import configAPI from './../.config';
-
-
-interface DateInputProps {
-  onDateChange: (date: Date) => void;
-}
+import SearchBar from '../Components/SearchBar';
+import { useRouter } from 'next/navigation'; // Corrected from 'next/navigation'
 
 const Main: React.FC = () => {
   const [name, setUsername] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [documents, setDocuments] = useState<any[] | null>(null);
+  const [filteredDocuments, setFilteredDocuments] = useState<any[] | null>(null); // Add this line
   const [authenticated, setAuthenticated] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const router = useRouter(); 
+  const [filters, setFilters] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const apiUrl = configAPI.apiUrl ;
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -28,11 +28,10 @@ const Main: React.FC = () => {
       localStorage.setItem('key', 'value');
     }
   }, []);
-  
 
   useEffect(() => {
     let isMounted = true;
-
+   
     const fetchData = () => {
       axios.get(`${apiUrl}/`, {
         headers: {
@@ -50,7 +49,7 @@ const Main: React.FC = () => {
           setUsername(response.data.name);
           setDocuments(response.data.documents);
           setLoading(false);
-          console.log(response.data.name)
+          console.log(response.data)
 
           // Check for new storage
           const storedName = localStorage.getItem('name');
@@ -82,7 +81,7 @@ const Main: React.FC = () => {
           router.push('/signin'); // Use router directly
         }
       });
-    };
+    }; 
 
     fetchData();
 
@@ -106,32 +105,44 @@ const Main: React.FC = () => {
       console.error('Error logging out:', error);
     }
   };
+  
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredDocuments(documents);
+    } else {
+      const searchTermWords = searchTerm.split(' ').filter(word => word !== '');
+    
+      const newFilteredDocuments = documents?.filter(document =>
+        searchTermWords.some(word =>
+          document.title.toLowerCase().includes(word.toLowerCase()) ||
+          document.description.toLowerCase().includes(word.toLowerCase()) ||
+          document.date_for_event.toLowerCase().includes(word.toLowerCase()) ||
+          document.user_name.toLowerCase().includes(word.toLowerCase())
+        )
+      );
+    
+      setFilteredDocuments(newFilteredDocuments || null);
+    }
+  }, [searchTerm, documents]);
 
   return (
     <div className={`h-screen dark:bg-[#011E2B] `}>
       <div className='fixed z-30'>
-
-      <NavBar />
-      
+        <NavBar />
       </div>
       <div className=' flex overflow-hidden z-10'>
-
         <div className='fixed z-20'>
-        <SideBar />
+        <SideBar setFilters={setFilters} setSearchTerm={setSearchTerm} setActiveFilters={setActiveFilters} />
+          
         </div>
-        <div>
-
-        </div>
-
-
+        <div className='absolute top-16 z-10 '>
+            <SearchBar filters={filters} setSearchTerm={setSearchTerm} activeFilters={activeFilters} />
+          </div>
         {loading && <p>Loading data...</p>}
         {error && <p>{error}</p>}
-
-       
-
-        {documents && (
-          <div className='relative z-0 ml-8 w-full xl:ml-80 mt-36 mr-10 mb-2 grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-9 justify-items-center align-items-center'>
-            {documents.map((document, index) => (
+        {filteredDocuments && (
+          <div className='relative z-0 ml-8 w-full xl:ml-80 md:ml-64 lg:ml-72 mt-36 mr-10 mb-2 grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-9 justify-items-center align-items-center'>
+            {filteredDocuments.map((document, index) => (
               <div key={index} className='relative w-96 card border border-none '>
                 <figure>
                   <Image
@@ -156,8 +167,6 @@ const Main: React.FC = () => {
             ))}
           </div>
         )}
-
-     
       </div>
     </div>
   );

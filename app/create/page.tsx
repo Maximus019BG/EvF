@@ -97,7 +97,7 @@ const Create: React.FC = () => {
               type='text'
               id='title'
               name='title'
-              className='mt-1 p-2 w-full border-b-2 dark:bg-[#3B3B3B] border-b-green-500 rounded-sm text-sm focus:outline-none input-placeholder'
+              className='mt-1 p-2 w-full border-b-2 bg-white text-black dark:bg-[#3B3B3B] border-b-green-500 rounded-sm text-sm focus:outline-none input-placeholder'
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
@@ -110,7 +110,7 @@ const Create: React.FC = () => {
             <textarea
               id='description'
               name='description'
-              className=' w-full border-0 dark:bg-[#3B3B3B] border-green-500 border-b-2 rounded-sm text-sm p-2 focus:outline-none textarea-placeholder'
+              className=' w-full border-0 bg-white text-black dark:bg-[#3B3B3B] border-green-500 border-b-2 rounded-sm text-sm p-2 focus:outline-none textarea-placeholder'
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
@@ -122,7 +122,7 @@ const Create: React.FC = () => {
     
         </div>
         <div className='flex-shrink-0 mt-16'>
-          <label className='flex flex-col items-center justify-center w-full h-96 border-2 border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2  '>
+          <label className='flex flex-col items-center justify-center w-full h-96 border-2  border-green-600 border-dashed rounded-lg cursor-pointer bg-green-400 px-1/2  '>
             <div className='flex flex-col items-center justify-center pt-5 pb-6'>
               <Image
                 src={FilePhoto}

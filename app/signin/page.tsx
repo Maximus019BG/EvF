@@ -58,14 +58,7 @@ const Signin: React.FC = () => {
       {/* TEXT */}
       <div className="w-full md:w-2/5 p-4 bg-white flex justify-center items-center flex-col mt-28 pb-20">
   
-        {/* Logo
-        <Image
-          src={logo}
-          alt="Logo"
-          className="mb-4 w-96"
-        /> */}
-  
-        <h1 className="text-5xl font-mono font-bold mb-5 mt-0 xl:mt-20 md:mt-20">Влизане</h1>
+        <h1 className="text-3xl font-mono font-bold mb-5 mt-0 xl:mt-20 md:mt-20">Влизане</h1>
   
         <form name="signup_form" onSubmit={handleSignIn} className="w-full max-w-md">
   
@@ -75,7 +68,7 @@ const Signin: React.FC = () => {
               type="text"
               id="name"
               name="name"
-              className="mt-1 p-2 w-full border-b-2 border-b-green-500 rounded-sm text-sm focus:outline-none"
+              className="mt-1 p-2 w-full border-b-2 border-b-green-500 bg-white text-black rounded-sm text-sm focus:outline-none"
               value={name}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -91,7 +84,7 @@ const Signin: React.FC = () => {
               type="password"
               id="password"
               name="password"
-              className="mt-1 p-2 w-full border-b-2 border-b-green-500 rounded-sm text-sm  focus:outline-none "
+              className="mt-1 p-2 w-full border-b-2 border-b-green-500 bg-white text-black rounded-sm text-sm  focus:outline-none "
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -100,7 +93,7 @@ const Signin: React.FC = () => {
           </div>
   
           <div className="flex items-center justify-between mt-4 mb-20">
-            <input type="submit" value="Влез в акаунт" className="bg-green-500 text-white font-semibold p-4 rounded-md cursor-pointer text-bold hover:bg-green-600 text-md" />
+            <input type="submit" value="Влез в акаунт" className="bg-green-500 text-white  font-semibold p-4 rounded-md cursor-pointer text-bold hover:bg-green-600 text-md" />
           </div>
   
         </form>
@@ -113,8 +106,13 @@ const Signin: React.FC = () => {
 
         </div>
          {/* small divice background */}
-        <div className='w-screen  h-2/3 xl:hidden md:w-0 sm:w-screen sm: overflow-clip mx-0 -mb-20 '> 
-       
+         <div className='w-screen  h-2/3 xl:hidden md:w-0 sm:w-screen sm: overflow-clip mx-0 -mb-20 '> 
+        <video src={require('../videos/Signin.mp4')} 
+          autoPlay 
+          muted 
+          loop
+          className="w-full h-full object-cover border-none"
+        />
         </div>
       </div>
     </div>

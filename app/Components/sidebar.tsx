@@ -1,11 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
+interface SideBarProps {
+  setFilters: (filters: string[]) => void;
+  setSearchTerm: (searchTerm: string) => void;
+  setActiveFilters: (activeFilters: string[]) => void;
+}
 
-const SideBar: React.FC = () => {
+const SideBar: React.FC<SideBarProps> = ({ setFilters, setSearchTerm, setActiveFilters }) => {
   const [isSpanClicked, setIsSpanClicked] = useState<boolean[]>([false, false, false]);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);  
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const checkboxRef = useRef(null);
+  const [activeFilters, setActiveFiltersLocal] = useState<string[]>([]);
+
+  const filters = useMemo(() => ['Концерт', 'Фестивал', 'Кино', 'Театър', 'Състезание'], []); 
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -19,7 +27,7 @@ const SideBar: React.FC = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    // Save the dark mode  to local storage
+    // Save the dark mode
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     console.log(localStorage.getItem('theme'));
   }, [isDarkMode]);
@@ -35,34 +43,43 @@ const SideBar: React.FC = () => {
     const updatedIsSpanClicked = [...isSpanClicked];
     updatedIsSpanClicked[index] = !updatedIsSpanClicked[index];
     setIsSpanClicked(updatedIsSpanClicked);
+    
+    if (updatedIsSpanClicked[index]) {
+      setActiveFiltersLocal([...activeFilters, filters[index]]);
+    } else {
+      setActiveFiltersLocal(activeFilters.filter(filter => filter !== filters[index]));
+    }
   };
 
-  const filters = ['Filter 1', 'Filter 2', 'Filter 3', 'Filter 4']; 
-  
+  useEffect(() => {
+    setFilters(filters);
+    setActiveFilters(activeFilters);
+  }, [filters, setFilters, activeFilters, setActiveFilters]);
+
   return (
-    <div className=' xl:-mt-11 lg:-mt-11 md:-mt-0 z-10'>
+    <div className=' xl:-mt-11 lg:-mt-11 md:-mt-11 z-10 shadow-md shadow-slate-300 '>
       <button className="toggle-button" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
       <span className={isSidebarOpen ? 'button-text button-text-show1' : 'button-text button-text-hide'}>Затвори</span>
       <span className={!isSidebarOpen ? 'button-text button-text-show ' : 'button-text button-text-hide'}>Отвори</span>
       </button>
-      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'} flex flex-col items-start mt-[48px] fixed h-screen z-6 w-60 text-2xl shadow-slate-400 pt-4 bg-white dark:bg-gray-800`}>
-        <h1 className={`mb-4 ml-5 text-4xl text-gray-900 dark:text-white`}>Филтри</h1>
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'} flex flex-col items-start mt-[48px] fixed h-screen z-6 w-72 text-lg shadow-slate-400 pt-4 bg-white dark:bg-gray-800`}>
+        <h1 className={`mb-4 ml-5 text-2xl font-semibold text-gray-900 dark:text-white`}>Филтри</h1>
 
         {filters.map((filter, index) => (
           <span
             key={index}
-            className={`border ${isSpanClicked[index] ? 'border-green-500 font-medium text-green-600 dark:text-green-400 dark:bg-[#011E2B] bg-green-100' : 'border-white font-normal'} pl-5 font pr-3 py-2 lowercase rounded-full cursor-pointer m-3 relative unselectable text-gray-900 dark:text-white`}
+            className={`border ${isSpanClicked[index] ? 'border-green-500 font-medium text-green-600 dark:text-green-400 dark:bg-[#011E2B] bg-green-100' : 'border-white font-normal'} px-5 font py-2 rounded-full cursor-pointer m-3 relative unselectable text-gray-900 dark:text-white`}
             onClick={() => handleSpanClick(index)}
           >
             {filter}
             {isSpanClicked[index] && (
-              <span className="p-2 px-2 cursor-pointer font-bold text-2xl text-gray-900 dark:text-green-600" onClick={() => handleSpanClick(index)}>
+              <span className="p-2 px-2 cursor-pointer font-bold text-lg text-green-600" onClick={() => handleSpanClick(index)}>
                 &nbsp; x
               </span>
             )}
           </span>
         ))}
-        <div className='relative top-96  left-8'>
+        <div className='relative top-64 left-8'>
         <button onClick={handleDarkMode} className="absolute text-gray-900 dark:text-white top-20 ">
     {isDarkMode ? (
       <div className='flex -ml-3'>

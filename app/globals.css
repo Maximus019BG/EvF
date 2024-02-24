@@ -130,7 +130,7 @@ body {
 }
 
 .nav {
-  @apply relative ml-10 text-gray-500 text-lg font-mono font-bold tracking-[1px] hover:text-black dark:hover:text-white dark:text-white
+  @apply relative ml-10 text-gray-500 text-md font-mono font-bold tracking-[1px] hover:text-black dark:hover:text-white dark:text-white
 }
 
 .nav::after {
