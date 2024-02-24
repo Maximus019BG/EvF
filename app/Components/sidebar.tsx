@@ -13,7 +13,7 @@ const SideBar: React.FC<SideBarProps> = ({ setFilters, setSearchTerm, setActiveF
   const checkboxRef = useRef(null);
   const [activeFilters, setActiveFiltersLocal] = useState<string[]>([]);
 
-  const filters = useMemo(() => ['Концерт', 'Фестивал', 'Кино', 'Театър', 'Състезание'], []); 
+  const filters = useMemo(() => ['Концерт', 'Фестивал', 'Кино', 'Театър', 'Състезание', 'Опера'], []); 
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -79,7 +79,7 @@ const SideBar: React.FC<SideBarProps> = ({ setFilters, setSearchTerm, setActiveF
             )}
           </span>
         ))}
-        <div className='relative top-64 left-8'>
+        <div className='relative -bottom-40 left-8'>
         <button onClick={handleDarkMode} className="absolute text-gray-900 dark:text-white top-20 ">
     {isDarkMode ? (
       <div className='flex -ml-3'>
