@@ -73,18 +73,18 @@ const Main: React.FC = () => {
           }
 
           else if (storedName === null) {
-            router?.push('/signin');
+          
             console.log('Впишете се!');
           }
           else if (storedName === response.data.name) {
             const response = `Здравейте отново ${storedName}! `;
-            console.log(response);
+        ;
           }
         }
       } catch (error:any) {
         console.error('Error fetching data:', error);
         if (error.response && error.response.status === 500) {
-          router.push('/signin'); // Use router directly
+
         }
       }
     };
