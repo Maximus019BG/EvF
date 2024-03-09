@@ -21,6 +21,7 @@ const Main: React.FC = () => {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const apiUrl = configAPI.apiUrl ;
   const router = useRouter();
+  const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

@@ -22,7 +22,7 @@ const Create: React.FC = () => {
   const apiUrl = configAPI.apiUrl;
   const router = useRouter();
   const [storedName, setStoredName] = useState<string>('');
-
+  const [admin, setAdmin] = useState(false);
   
   
   console.log(storedName)

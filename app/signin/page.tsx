@@ -10,13 +10,12 @@ const Signin: React.FC = () => {
   const [name, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const apiUrl = configAPI.apiUrl ;
-
+  const [admin, setAdmin] = useState(false);
  
   
   const handleSignIn = (event: React.FormEvent) => {
     event.preventDefault();
 
-   
     
     axios.post(`${apiUrl}/login`, {
       headers: {

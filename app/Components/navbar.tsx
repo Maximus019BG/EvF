@@ -1,12 +1,18 @@
 'use client'
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import profile from '../images/profilePic.png';
 
 const NavBar: React.FC = () => {
   const router = useRouter();
-  
+  const [admin, setAdmin] = useState(false);
+  useEffect(() => {
+    const name = localStorage.getItem('Name');
+    if (name === 'Admin' || name === 'admin' || name === 'ADMIN' ) {
+      setAdmin(true);
+    }
+  }, []);
 
   const navigateTo = (path: string) => {
     router.push(path);
@@ -18,6 +24,7 @@ const NavBar: React.FC = () => {
         <h1 className='nav cursor-default' onClick={() => navigateTo('/home')}>Събития</h1>
         <h1 className='nav cursor-default' onClick={() => navigateTo('/create')}>Създай</h1>
         <h1 className='nav cursor-default' onClick={() => navigateTo('/land')}>Начало</h1>
+        {admin && <h1 className='nav cursor-default' onClick={() => navigateTo('/admin')}>Администрация</h1>}
       </div>
     </div>
   );
