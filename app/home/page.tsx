@@ -57,6 +57,13 @@ const Main: React.FC = () => {
           if (storedName !== response.data.name) {
             localStorage.removeItem('name');
             const welcomeMessage = `Добре дошли "${response.data.name}" !`;
+            axios.post(`${apiUrl}/`, {
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              withCredentials: true,
+              name: localStorage.getItem('name')
+            });
             localStorage.setItem('name', response.data.name); 
             console.log(welcomeMessage);
           }
