@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
   const router = useRouter();
   const [admin, setAdmin] = useState(false);
   useEffect(() => {
-    const name = localStorage.getItem('Name');
+    const name = localStorage.getItem('name');
     if (name === 'Admin' || name === 'admin' || name === 'ADMIN' ) {
       setAdmin(true);
     }
