@@ -24,6 +24,7 @@ const Signin: React.FC = () => {
       },
       name: name,
       password: password,
+      withCredentials: true,
   })
   .then((response) => {
       // Handle the response if needed

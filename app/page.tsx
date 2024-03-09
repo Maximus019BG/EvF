@@ -34,6 +34,7 @@ const handleSignUp = async (event: React.FormEvent) => {
       headers: {
         'Content-Type': 'application/json',
       },
+      withCredentials: true,
     });
 
 
