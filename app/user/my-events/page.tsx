@@ -21,7 +21,14 @@ const UserEvents: React.FC = () => {
     const apiUrl = configAPI.apiUrl ;
     const router = useRouter();
     const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-    const storedName = localStorage.getItem('name');
+    let storedName = '';
+
+    if (typeof window !== 'undefined') {
+
+         storedName = localStorage.getItem('name') || '';
+        
+    }
+  
 
     
 
