@@ -36,7 +36,7 @@ const Main: React.FC = () => {
     let isMounted = true;
    
     const fetchData = () => {
-      axios.get(`${apiUrl}/`, {
+      axios.get(`${apiUrl}/admin`, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -60,7 +60,7 @@ const Main: React.FC = () => {
           if (storedName !== response.data.name) {
             localStorage.removeItem('name');
             const welcomeMessage = `Добре дошли "${response.data.name}" !`;
-            axios.post(`${apiUrl}/`, {
+            axios.post(`${apiUrl}/admin`, {
               headers: {
                 'Content-Type': 'application/json'
               },

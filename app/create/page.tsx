@@ -34,11 +34,8 @@ const Create: React.FC = () => {
   }, [storedName]);
 
   const handlePostCreation = async (event: React.FormEvent) => {
-    console.log('handlePostCreation is called');
     event.preventDefault();
     try {
-      console.log({ date, photos, title, description, storedName });
-      console.log({ apiUrl });
       if (!date) {
         setError('Please select a date.');
         return;
@@ -54,7 +51,12 @@ const Create: React.FC = () => {
       formData.append('user_name', storedName);
       formData.append('photos', photos);
 
-      const response = await axios.post(`${apiUrl}/posts`, formData, { withCredentials: true });
+      const response = await axios.post(`${apiUrl}/posts`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        withCredentials: true,
+      });
 
       console.log(response.data);
 
