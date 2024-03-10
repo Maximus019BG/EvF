@@ -40,11 +40,11 @@ const ProfilePage: React.FC = () => {
 
 
     const clickEvents = () => {
-        router.push('/my-events');
+        router.push('/user/my-events');
     }
 
     const clickSettings = () => {
-        router.push('/settings');
+        router.push('/user/settings');
     }
  
     

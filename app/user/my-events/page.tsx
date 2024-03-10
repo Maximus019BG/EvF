@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import NavBar from '../Components/navbar';
-import SideBar from '../Components/sidebar';
-import configAPI from '../.config';
-import SearchBar from '../Components/SearchBar';
+import NavBar from '../../Components/navbar';
+import SideBar from '../../Components/sidebar';
+import configAPI from '../../.config';
+import SearchBar from '../../Components/SearchBar';
 import { useRouter } from 'next/navigation';
 
 const UserEvents: React.FC = () => {
