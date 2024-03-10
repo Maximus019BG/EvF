@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import configAPI from '../../.config';
-import NavBar from '../../Components/navbar';
+import configAPI from '../.config';
+import NavBar from '../Components/navbar';
 import { useRouter } from 'next/navigation'; 
 
 
