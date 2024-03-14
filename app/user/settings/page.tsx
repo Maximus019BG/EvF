@@ -24,13 +24,12 @@ const ChangeSettings: React.FC = () => {
                 router.push('/signin');
         
             }
+            else if (storedName === null) {
+                router?.push('/signin');
+                console.log('Впишете се!');
+              }
         }
-    }, [router]);
-    
-    if (storedName === null) {
-        router?.push('/signin');
-        console.log('Впишете се!');
-      }
+    }, [router, storedName]);
       
   let type = '';
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

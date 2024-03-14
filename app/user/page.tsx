@@ -35,13 +35,13 @@ const ProfilePage: React.FC = () => {
                 router.push('/signin');
         
             }
+            else if (storedName === null) {
+                router?.push('/signin');
+                console.log('Впишете се!');
+              }
         }
-    }, [router]);
+    }, [router, storedName]);
     
-    if (storedName === null) {
-        router?.push('/signin');
-        console.log('Впишете се!');
-      }
 
     const clickEvents = () => {
         router.push('/user/my-events');
