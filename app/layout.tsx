@@ -16,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark:bg-[#011E2B] bg-white'>
+      <meta name="google" content="The best events in Varna BG" key="notranslate" />
       <body className={inter.className}>{children}</body>
     </html>
   )
